@@ -7,7 +7,7 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/reactreadinglist"
 );
-
+//creating objects for books
 const bookSeed = [
   {
     title: "The Dead Zone",
