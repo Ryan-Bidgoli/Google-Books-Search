@@ -5,6 +5,7 @@ var app = express()
 var PORT = process.env.PORT||3001
 //importing mongoose
 var mongoose = require("mongoose")
+//load files in public directory
 app.use(express.static("public"))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
