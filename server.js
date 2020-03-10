@@ -1,6 +1,7 @@
 //importing express
 var express = require("express")
 var app = express()
+//setting up server port
 var PORT = process.env.PORT||3001
 var mongoose = require("mongoose")
 app.use(express.static("public"))
