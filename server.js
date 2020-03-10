@@ -13,6 +13,7 @@ app.use(express.json())
 mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/googlebooks")
 var apiroutes = require("./routes/apiroutes")
 apiroutes(app)
+//listening to port number
 app.listen(PORT,function(){
     console.log("app is listening http://localhost:"+PORT)
 })
