@@ -40,6 +40,22 @@ class App extends Component {
       this.handleFormSubmit(event);
     }
   }
+
+  postToDB = (book) => {
+    console.log(book)
+    var dbBook = {
+      title: book.volumeInfo.title,
+      authors: book.volumeInfo.authors,
+      synopsis: book.volumeInfo.synopsis,
+      thumbnail: book.volumeInfo.imageLinks.thumbnail,
+      link: book.volumeInfo.previewLink
+    }
+
+   API.postGoogleBooks(dbBook)
+    .then( () => console.log(`You added ${book.title} to your bookshelf`))
+    .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <div>
@@ -56,7 +72,7 @@ class App extends Component {
                         name="recipeSearch"
                         value={this.state.recipeSearch}
                         onChange={this.handleInputChange}
-                        placeholder="Search For a Recipe"
+                        placeholder="Search For a Book"
                       />
                     </Col>
                     <Col size="xs-3 sm-2">
@@ -76,7 +92,7 @@ class App extends Component {
           <Row>
             <Col size="xs-12">
               {!this.state.recipes.length ? (
-                <h1 className="text-center">No Recipes to Display</h1>
+                <h1 className="text-center">No Books to Display</h1>
               ) : (
                 <RecipeList>
                   {this.state.recipes.map(recipe => {
@@ -87,6 +103,8 @@ class App extends Component {
                         href={recipe.volumeInfo.previewLink}
                         ingredients={recipe.volumeInfo.description}
                         thumbnail={recipe.volumeInfo.imageLinks.thumbnail}
+                        books = {recipe}
+                        saveBooksClicks = {this.postToDB}
                       />
                     );
                   })}

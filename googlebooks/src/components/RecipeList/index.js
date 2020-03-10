@@ -1,7 +1,8 @@
 import React from "react";
 import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
-
+import AddBookBtn from "../AddBookBtn";
+import RemoveBookBtn from "../RemoveBookBtn";
 // Exporting both RecipeList and RecipeListItem from this file
 
 // RecipeList renders a bootstrap list item
@@ -14,8 +15,11 @@ export function RecipeListItem({
   thumbnail = "https://placehold.it/300x300",
   title,
   ingredients,
-  href
+  href,
+  books,
+  saveBooksClicks 
 }) {
+  console.log(saveBooksClicks)
   return (
     <li className="list-group-item">
       <Container>
@@ -25,10 +29,18 @@ export function RecipeListItem({
           </Col>
           <Col size="xs-8 sm-9">
             <h3>{title}</h3>
-            <p>Ingredients: {ingredients}</p>
+            <p>Info: {ingredients}</p>
             <a rel="noreferrer noopener" target="_blank" href={href}>
-              Go to recipe!
+              view book details
             </a>
+            <Row>
+              <Col size = "xs-4 ">
+              <AddBookBtn books={books}  savebooks={saveBooksClicks } >save</AddBookBtn> 
+              </Col>
+              <Col size = "xs-4">
+            <RemoveBookBtn>delete</RemoveBookBtn>
+            </Col>
+            </Row>
           </Col>
         </Row>
       </Container>

@@ -1,3 +1,4 @@
+var db = require("../models")
 var axios = require("axios")
 function apiroutes(app)
 {
@@ -8,6 +9,11 @@ function apiroutes(app)
 
                res.json(response.data.items)
            })
+    })
+    app.post("/api/books",function(req,res){
+        db.Book.create(req.body).then(function(data){
+            res.json(data)
+        })
     })
 }
 
