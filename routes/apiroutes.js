@@ -3,6 +3,7 @@ var db = require("../models")
 var axios = require("axios")
 function apiroutes(app)
 {
+    //get handles the api route
     app.get("/api/googlebooks/:search",function(req,res){
            var search = req.params.search
            axios.get("https://www.googleapis.com/books/v1/volumes?q="+search).then(function(response){
