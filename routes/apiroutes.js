@@ -12,6 +12,7 @@ function apiroutes(app)
                res.json(response.data.items)
            })
     })
+    //using the route to send data
     app.post("/api/books",function(req,res){
         db.Book.create(req.body).then(function(data){
             res.json(data)
