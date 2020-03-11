@@ -10,5 +10,5 @@ const bookSchema = new Schema({
 });
 //passing schema object into variable
 const Book = mongoose.model("Book", bookSchema);
-
+//export book as module
 module.exports = Book;
