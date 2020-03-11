@@ -31,6 +31,7 @@ class App extends Component {
       .then(res => this.setState({ recipes: res.data }))
       .catch(err => console.log(err));
   };
+  //incrementing the page of results
   handleNextPage = event => {
     this.setState({page: this.state.page + 1});
     this.handleFormSubmit(event);
