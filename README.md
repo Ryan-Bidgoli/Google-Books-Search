@@ -7,3 +7,12 @@ The oogle Books Search app is an application that uses react-router-dom to navig
 ### required npm packages
 
 `mongoose`, `axios`, `react-router-dom`, `react-toastify`
+
+### Technologies Used
+
+* Bootstrap
+* Express
+* Node.js
+* React
+* MongoDB
+* Heroku
