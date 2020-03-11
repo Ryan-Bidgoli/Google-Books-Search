@@ -1,3 +1,4 @@
+// importing axios
 import axios from "axios";
 
 // The getRecipes method retrieves recipes from the server
