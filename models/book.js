@@ -1,7 +1,7 @@
 //importing mongoose
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+//defining the objects types for bookschema
 const bookSchema = new Schema({
   title: { type: String, required: true },
   author: { type: Array, required: true },
