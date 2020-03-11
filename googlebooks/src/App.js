@@ -7,7 +7,7 @@ import Button from "./components/Button";
 import API from "./utils/API";
 import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
-
+//extending the state object
 class App extends Component {
   state = {
     recipes: [],
