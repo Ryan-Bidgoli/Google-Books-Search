@@ -35,7 +35,8 @@ class App extends Component {
   handleNextPage = event => {
     this.setState({page: this.state.page + 1});
     this.handleFormSubmit(event);
-  }
+  }  
+  //decrementing the page of results
   handlePreviousPage = event => {
     if (this.page > 1) {
       this.setState({page: this.state.page - 1});
