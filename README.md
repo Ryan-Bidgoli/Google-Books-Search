@@ -16,3 +16,7 @@ The oogle Books Search app is an application that uses react-router-dom to navig
 * React
 * MongoDB
 * Heroku
+
+### Deployment
+
+ This app is deployed on Heroku at  https://whispering-depths-65950.herokuapp.com/
