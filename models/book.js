@@ -8,7 +8,7 @@ const bookSchema = new Schema({
   synopsis: String,
   date: { type: Date, default: Date.now }
 });
-
+//passing schema object into variable
 const Book = mongoose.model("Book", bookSchema);
 
 module.exports = Book;
